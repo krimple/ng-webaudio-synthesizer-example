@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SynthesizerModule } from 'ng-webaudio-synthesizer';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +17,6 @@ import { SynthesizerModule } from 'ng-webaudio-synthesizer';
     HttpModule,
     SynthesizerModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
