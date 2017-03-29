@@ -1,3 +1,27 @@
 <h1>
   {{title}}
 </h1>
+<ul>
+  <li *ngFor="let device of devices">
+    {{ device.name }} - {{ device.id }}
+  </li>
+</ul>
+<form name="devicesForm" (change)="logChanges()">
+<select name="deviceId" [(ngModel)]="deviceId">
+ <option *ngFor="let device of devices" [ngValue]="device.id">{{ device.name }}</option>
+</select>
+</form>
+
+{{ midiServiceRunning }}
+<button (click)="startMidiWithDevice(deviceId)" [disabled]="midiServiceRunning">Start Midi Service</button>
+<button (click)="startPlaying()" [disabled]="!midiServiceRunning">Start playing!</button>
+<button (click)="stopPlaying()" [disabled]="!midiServiceRunning">Stop playing!</button>
+<button (click)="stopMidi()" [disabled]="!midiServiceRunning">Stop Midi Service</button>
+
+<button (click)="startPipeline()">Start Pipeline</button>
+<button (click)="endPipeline()">End Pipeline</button>
+
+<pre>
+  {{(devices ? devices[0].name : 'nothing') | json }}
+  {{ deviceIds }}
+</pre>

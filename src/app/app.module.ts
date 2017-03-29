@@ -13,9 +13,8 @@ import { SynthesizerModule } from 'ng-webaudio-synthesizer';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
-    SynthesizerModule
+    SynthesizerModule,
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })
